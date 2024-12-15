@@ -1,9 +1,6 @@
 package com.example.demo.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,6 +12,7 @@ import com.example.demo.model.Result;
 
 @RestController
 @RequestMapping("/checkanswers")
+@CrossOrigin(origins = "${cors.allowed-origins}")
 public class AnswerController {
     private final TriviaService triviaService;
 

@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Result {
@@ -11,7 +12,7 @@ public class Result {
     public Result(int score, int totalQuestions, List<AnswerInfo> answerInfo) {
         this.score = score;
         this.totalQuestions = totalQuestions;
-        this.answerInfo = answerInfo;
+        this.answerInfo = answerInfo != null ? answerInfo : new ArrayList<>();
     }
 
     public int getScore() { return score; }
@@ -19,6 +20,9 @@ public class Result {
 
     public int getTotalQuestions() { return totalQuestions; }
     public void setTotalQuestions(int totalQuestions) { this.totalQuestions = totalQuestions; }
+
+    public List<AnswerInfo> getAnswerInfo() { return answerInfo; }
+    public void setAnswerInfo(List<AnswerInfo> answerInfo) { this.answerInfo = answerInfo; }
 
     // Inner class to hold details of incorrect answers
     public static class AnswerInfo {
