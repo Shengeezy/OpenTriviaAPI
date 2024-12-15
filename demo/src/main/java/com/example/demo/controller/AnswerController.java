@@ -20,22 +20,6 @@ public class AnswerController {
         this.triviaService = triviaService;
     }
 
-//    @PostMapping
-//    public Result checkAnswers(@RequestBody List<UserAnswer> userAnswers) {
-//        List<Question> currentQuestions = triviaService.getCurrentQuestions(); // Get questions from TriviaService
-//        int correctAnswers = 0;
-//        for (UserAnswer userAnswer : userAnswers) {
-//            Question question = currentQuestions.stream()
-//                    .filter(q -> q.getQuestion().equals(userAnswer.getQuestion()))
-//                    .findFirst()
-//                    .orElse(null);
-//
-//            if (question != null && userAnswer.getAnswer().equals(question.getCorrectAnswer())) {
-//                correctAnswers++;
-//            }
-//        }
-//        return new Result(correctAnswers, currentQuestions.size());
-//    }
     @PostMapping
     public Result checkAnswers(@RequestBody List<UserAnswer> userAnswers) {
         List<Question> currentQuestions = triviaService.getCurrentQuestions(); // Get questions from TriviaService

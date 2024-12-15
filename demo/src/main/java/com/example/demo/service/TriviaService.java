@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,7 +14,9 @@ import com.example.demo.model.TriviaApiResponse;
 
 @Service
 public class TriviaService {
-    private static final String API_URL = "https://opentdb.com/api.php?amount=10";
+//    private static final String API_URL = "https://opentdb.com/api.php?amount=10";
+    @Value("${API_URL}")
+    private String API_URL;
     private final RestTemplate restTemplate;
     private List<Question> currentQuestions = Collections.emptyList(); // Shared storage
 
