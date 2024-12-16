@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
-- Java 17 installed
+- Java 23 installed
 - Gradle installed
 - Node.js 21.x
 
