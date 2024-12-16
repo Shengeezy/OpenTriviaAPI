@@ -1,7 +1,7 @@
 package com.example.demo.model;
 
 public class UserAnswer {
-    private String question;     // The question text (or an ID if used later)
+    private String question;     // The question text
     private String answer;       // The user's submitted answer
 
     // Constructor

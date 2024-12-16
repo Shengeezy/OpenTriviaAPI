@@ -6,6 +6,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import com.example.demo.model.Question;
@@ -14,7 +15,6 @@ import com.example.demo.model.TriviaApiResponse;
 
 @Service
 public class TriviaService {
-//    private static final String API_URL = "https://opentdb.com/api.php?amount=10";
     @Value("${API_URL}")
     private String API_URL;
     private final RestTemplate restTemplate;
@@ -38,7 +38,7 @@ public class TriviaService {
         return currentQuestions;
     }
 
-    private Question convertToQuestion(TriviaApiResponse.TriviaQuestion result) {
+    public Question convertToQuestion(TriviaApiResponse.TriviaQuestion result) {
         if ("boolean".equals(result.getType())) {
             return new Question(result.getQuestion(), "True".equals(result.getCorrect_answer()));
         } else {
