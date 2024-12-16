@@ -3,7 +3,7 @@
 ### Prerequisites
 
 - Java 17 installed
-- Maven installed
+- Gradle installed
 - Node.js 21.x
 
 ### Backend Setup
